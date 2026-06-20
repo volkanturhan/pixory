@@ -12,6 +12,12 @@
     <UseWindowsForms>true</UseWindowsForms>
     <!-- Icon shown for the .exe in Explorer and the taskbar. -->
     <ApplicationIcon>Assets\Pixory.ico</ApplicationIcon>
+    <!-- Per-Monitor-V2 DPI awareness, needed for pixel-accurate colour sampling.
+         This is a WPF app, so DPI awareness is declared in the manifest (WPF
+         reads it from there); silence the WinForms analyzer that assumes the
+         WinForms-only ApplicationHighDpiMode path instead. -->
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <NoWarn>$(NoWarn);WFAC010</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
