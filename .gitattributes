@@ -1,0 +1,9 @@
+# Normalise line endings so the repo stays consistent across machines.
+# Text files are stored with LF in the repo and checked out with the
+# platform's native endings.
+* text=auto
+
+# Keep these as-is to avoid spurious diffs.
+*.png binary
+*.ico binary
+*.jks binary
