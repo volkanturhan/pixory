@@ -9,6 +9,10 @@ eden bir büyüteçle tam istediğin pikseli hizalarsın, tıklarsın — ve ren
 istediğin biçimde (HEX, RGB ya da HSL) panoya kopyalanır. Seçtiğin her renk,
 yeniden açıp kopyalayabileceğin ya da sabitleyebileceğin küçük bir palette tutulur.
 
+<p align="center">
+  <img src="docs/screenshot.png" alt="Pixory büyüteç ve hex okuması" width="360" />
+</p>
+
 ## Özellikler
 
 - **Herhangi bir pikseli seç** — global kısayol (`Ctrl + Shift + C`) büyüteç ve

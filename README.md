@@ -9,6 +9,10 @@ your cursor so you can line up the exact pixel, click — and the colour is copi
 to your clipboard in whatever format you like (HEX, RGB, or HSL). Every colour
 you pick is kept in a small palette you can reopen, copy from again, or pin.
 
+<p align="center">
+  <img src="docs/screenshot.png" alt="Pixory's magnifier loupe and hex readout" width="360" />
+</p>
+
 ## Features
 
 - **Pick any pixel** — global hotkey (`Ctrl + Shift + C`) opens a full-screen
