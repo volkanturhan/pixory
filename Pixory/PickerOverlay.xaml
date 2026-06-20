@@ -1,0 +1,68 @@
+<Window x:Class="Pixory.PickerOverlay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:services="clr-namespace:Pixory.Services"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Topmost="True"
+        WindowStartupLocation="Manual"
+        Background="Black"
+        Cursor="Cross"
+        FontFamily="Segoe UI">
+    <Grid x:Name="Root">
+
+        <!-- The frozen desktop snapshot, stretched to fill the overlay so the
+             screen looks untouched while the user is picking. -->
+        <Image x:Name="ScreenImage" Stretch="Fill" />
+
+        <!-- Loupe + readout, moved to follow the cursor. Not hit-testable so it
+             never eats the click that picks a colour. -->
+        <Canvas IsHitTestVisible="False">
+            <StackPanel x:Name="LoupePanel">
+
+                <!-- Magnified pixels with a crosshair cell over the centre. -->
+                <Border Width="132" Height="132" CornerRadius="10"
+                        BorderBrush="White" BorderThickness="2"
+                        ClipToBounds="True">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="12"
+                                          ShadowDepth="0" Opacity="0.55" />
+                    </Border.Effect>
+                    <Grid>
+                        <Image x:Name="LoupeImage" Stretch="Fill"
+                               RenderOptions.BitmapScalingMode="NearestNeighbor" />
+                        <!-- Highlight the single pixel under the cursor. -->
+                        <Border Width="12" Height="12"
+                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                BorderBrush="White" BorderThickness="1.5">
+                            <Border BorderBrush="Black" BorderThickness="1" />
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <!-- Readout: a swatch of the current colour and its hex value. -->
+                <Border Margin="0,6,0,0" CornerRadius="6" Background="#EE111827"
+                        HorizontalAlignment="Center" Padding="8,4">
+                    <StackPanel Orientation="Horizontal">
+                        <Border x:Name="ReadoutSwatch" Width="14" Height="14"
+                                CornerRadius="3" BorderBrush="#55FFFFFF"
+                                BorderThickness="1" VerticalAlignment="Center" />
+                        <TextBlock x:Name="HexReadout" Text="#000000"
+                                   Margin="7,0,0,0" Foreground="White"
+                                   FontSize="13" FontWeight="SemiBold"
+                                   VerticalAlignment="Center" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Canvas>
+
+        <!-- Bottom hint. -->
+        <Border VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                Margin="0,0,0,40" CornerRadius="8" Background="#CC111827"
+                Padding="14,8" IsHitTestVisible="False">
+            <TextBlock Text="{Binding [PickerHint], Source={x:Static services:Localization.Instance}}"
+                       Foreground="White" FontSize="13" />
+        </Border>
+    </Grid>
+</Window>
