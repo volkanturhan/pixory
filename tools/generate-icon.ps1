@@ -1,4 +1,4 @@
-# Generates Pixory's application icon: a colourful rounded square (an indigo→pink
+# Generates pixory's application icon: a colourful rounded square (an indigo→pink
 # diagonal gradient, evoking "colours") with a white eyedropper on top, the
 # universal sign for a screen colour picker.
 #
@@ -6,7 +6,7 @@
 # because System.Drawing.Icon / the WinForms NotifyIcon load BMP frames
 # reliably, whereas PNG-compressed frames can fail to decode.
 #
-# Run from anywhere; it writes ../Pixory/Assets/Pixory.ico.
+# Run from anywhere; it writes ../pixory/Assets/pixory.ico.
 Add-Type -AssemblyName System.Drawing
 
 function New-RoundedRect([single]$x, [single]$y, [single]$w, [single]$h, [single]$r) {
@@ -130,7 +130,7 @@ foreach ($single in $singles) {
 }
 $w.Flush()
 
-$target = Join-Path $PSScriptRoot '..\Pixory\Assets\Pixory.ico'
+$target = Join-Path $PSScriptRoot '..\pixory\Assets\pixory.ico'
 [System.IO.File]::WriteAllBytes($target, $out.ToArray())
 $w.Dispose()
 Write-Output "Wrote $((Resolve-Path $target).Path) ($((Get-Item $target).Length) bytes)"
