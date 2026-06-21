@@ -7,7 +7,7 @@ using Brush = System.Windows.Media.Brush;
 using Color = System.Windows.Media.Color;
 using SolidColorBrush = System.Windows.Media.SolidColorBrush;
 
-namespace Pixory.Models;
+namespace pixory.Models;
 
 /// <summary>
 /// A single colour the user has picked off the screen, stored as plain 8-bit

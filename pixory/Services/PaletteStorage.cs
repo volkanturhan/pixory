@@ -1,12 +1,12 @@
 using System.IO;
 using System.Text.Json;
-using Pixory.Models;
+using pixory.Models;
 
-namespace Pixory.Services;
+namespace pixory.Services;
 
 /// <summary>
 /// Persists the picked-colour palette to disk so it survives restarts, storing
-/// it as JSON under %APPDATA%\Pixory. All operations are best-effort: a missing
+/// it as JSON under %APPDATA%\pixory. All operations are best-effort: a missing
 /// or corrupt file simply yields an empty palette, and a failed save is
 /// swallowed rather than allowed to crash the app.
 /// </summary>
@@ -24,7 +24,7 @@ public sealed class PaletteStorage
     {
         var folder = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            "Pixory");
+            "pixory");
         Directory.CreateDirectory(folder);
         _filePath = Path.Combine(folder, "palette.json");
     }

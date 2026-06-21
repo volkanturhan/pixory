@@ -1,17 +1,17 @@
 using System.Windows;
-using Pixory.Models;
-using Pixory.Services;
+using pixory.Models;
+using pixory.Services;
 
 // Enabling WinForms (for the tray icon) pulls the System.Windows.Forms versions
 // of these types into scope too, so spell out that we mean the WPF ones.
 using Application = System.Windows.Application;
 using Clipboard = System.Windows.Clipboard;
-using Localization = Pixory.Services.Localization;
+using Localization = pixory.Services.Localization;
 
-namespace Pixory;
+namespace pixory;
 
 /// <summary>
-/// Application entry point. Wires together the long-lived pieces of Pixory and
+/// Application entry point. Wires together the long-lived pieces of pixory and
 /// runs it as a tray application: there is no window on startup, the app lives in
 /// the system tray, and it only exits when the user chooses "Quit".
 ///
@@ -33,10 +33,10 @@ public partial class App : Application
 
     protected override void OnStartup(StartupEventArgs e)
     {
-        // Only one Pixory should own the global hotkey at a time. If another
+        // Only one pixory should own the global hotkey at a time. If another
         // instance already holds the mutex, bow out quietly.
         _singleInstanceMutex = new Mutex(initiallyOwned: true,
-            @"Local\Pixory.SingleInstance", out var isFirstInstance);
+            @"Local\pixory.SingleInstance", out var isFirstInstance);
         if (!isFirstInstance)
         {
             Shutdown();

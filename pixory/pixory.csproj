@@ -11,7 +11,7 @@
          stays free of third-party dependencies. -->
     <UseWindowsForms>true</UseWindowsForms>
     <!-- Icon shown for the .exe in Explorer and the taskbar. -->
-    <ApplicationIcon>Assets\Pixory.ico</ApplicationIcon>
+    <ApplicationIcon>Assets\pixory.ico</ApplicationIcon>
     <!-- Per-Monitor-V2 DPI awareness, needed for pixel-accurate colour sampling.
          This is a WPF app, so DPI awareness is declared in the manifest (WPF
          reads it from there); silence the WinForms analyzer that assumes the
@@ -23,14 +23,14 @@
   <ItemGroup>
     <!-- Also embed the icon as a resource so the tray code can load it at
          runtime via a pack URI. -->
-    <Resource Include="Assets\Pixory.ico" />
+    <Resource Include="Assets\pixory.ico" />
   </ItemGroup>
 
   <!-- Product / assembly metadata. Kept in one place so the published exe
        carries proper details in its file properties. -->
   <PropertyGroup>
-    <Product>Pixory</Product>
-    <AssemblyTitle>Pixory</AssemblyTitle>
+    <Product>pixory</Product>
+    <AssemblyTitle>pixory</AssemblyTitle>
     <Description>A lightweight Windows screen colour picker.</Description>
     <Authors>Volkan Turhan</Authors>
     <Version>0.1.0</Version>

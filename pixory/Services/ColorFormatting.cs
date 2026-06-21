@@ -1,8 +1,8 @@
 using System.Globalization;
 
-namespace Pixory.Services;
+namespace pixory.Services;
 
-/// <summary>The notations Pixory can copy a picked colour in.</summary>
+/// <summary>The notations pixory can copy a picked colour in.</summary>
 public enum ColorFormat
 {
     Hex,

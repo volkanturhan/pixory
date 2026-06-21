@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
-using Pixory.Services;
+using pixory.Services;
 
 // WinForms is enabled for the tray, so disambiguate the types this window uses
 // down to their WPF versions.
@@ -17,7 +17,7 @@ using MouseEventArgs = System.Windows.Input.MouseEventArgs;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using Key = System.Windows.Input.Key;
 
-namespace Pixory;
+namespace pixory;
 
 /// <summary>
 /// The full-screen colour picker. On show it freezes a snapshot of the whole

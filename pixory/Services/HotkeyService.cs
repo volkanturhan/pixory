@@ -2,7 +2,7 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
 
-namespace Pixory.Services;
+namespace pixory.Services;
 
 /// <summary>
 /// Registers a system-wide hotkey (Ctrl + Shift + C) and raises
@@ -49,7 +49,7 @@ public sealed class HotkeyService : IDisposable
 
     public HotkeyService()
     {
-        var parameters = new HwndSourceParameters("PixoryHotkey")
+        var parameters = new HwndSourceParameters("pixoryHotkey")
         {
             ParentWindow = HWND_MESSAGE,
         };

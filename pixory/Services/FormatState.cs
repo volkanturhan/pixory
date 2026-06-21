@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Pixory.Services;
+namespace pixory.Services;
 
 /// <summary>
 /// Holds the colour format currently chosen for copying (HEX / RGB / HSL) as

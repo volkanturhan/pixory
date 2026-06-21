@@ -1,25 +1,25 @@
 using Microsoft.Win32;
 
-namespace Pixory.Services;
+namespace pixory.Services;
 
 /// <summary>
-/// Controls whether Pixory launches automatically when the user signs in, via
+/// Controls whether pixory launches automatically when the user signs in, via
 /// the per-user "Run" registry key. This needs no admin rights and only affects
 /// the current user.
 /// </summary>
 public static class AutoStart
 {
     private const string RunKeyPath = @"Software\Microsoft\Windows\CurrentVersion\Run";
-    private const string ValueName = "Pixory";
+    private const string ValueName = "pixory";
 
-    /// <summary>True if Pixory is registered to start with Windows.</summary>
+    /// <summary>True if pixory is registered to start with Windows.</summary>
     public static bool IsEnabled()
     {
         using var key = Registry.CurrentUser.OpenSubKey(RunKeyPath);
         return key?.GetValue(ValueName) is string value && value.Length > 0;
     }
 
-    /// <summary>Registers or unregisters Pixory for automatic startup.</summary>
+    /// <summary>Registers or unregisters pixory for automatic startup.</summary>
     public static void SetEnabled(bool enabled)
     {
         using var key = Registry.CurrentUser.OpenSubKey(RunKeyPath, writable: true)

@@ -3,15 +3,15 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Threading;
-using Pixory.Models;
-using Pixory.Services;
+using pixory.Models;
+using pixory.Services;
 
 // WinForms is enabled for the tray, so disambiguate the input event args in
 // favour of the WPF ones this window uses.
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using MouseButtonEventArgs = System.Windows.Input.MouseButtonEventArgs;
 
-namespace Pixory;
+namespace pixory;
 
 /// <summary>
 /// The palette popup. It lists recently picked colours and lets the user copy

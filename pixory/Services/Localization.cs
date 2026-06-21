@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Pixory.Services;
+namespace pixory.Services;
 
 public enum AppLanguage
 {

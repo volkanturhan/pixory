@@ -1,16 +1,16 @@
-# Pixory
+# pixory
 
 **[English](README.md) | Türkçe**
 
 Hafif bir Windows ekran renk seçici.
 
-Pixory sistem tepsisinde sessizce durur. Bir kısayola basarsın, imlecini takip
+pixory sistem tepsisinde sessizce durur. Bir kısayola basarsın, imlecini takip
 eden bir büyüteçle tam istediğin pikseli hizalarsın, tıklarsın — ve renk
 istediğin biçimde (HEX, RGB ya da HSL) panoya kopyalanır. Seçtiğin her renk,
 yeniden açıp kopyalayabileceğin ya da sabitleyebileceğin küçük bir palette tutulur.
 
 <p align="center">
-  <img src="docs/screenshot.png" alt="Pixory büyüteç ve hex okuması" width="360" />
+  <img src="docs/screenshot.png" alt="pixory büyüteç ve hex okuması" width="360" />
 </p>
 
 ## Özellikler
@@ -29,23 +29,23 @@ yeniden açıp kopyalayabileceğin ya da sabitleyebileceğin küçük bir palett
 
 ## Çalıştır
 
-Pixory henüz hazır bir indirme olarak yayınlanmadı, bu yüzden şimdilik kaynaktan
+pixory henüz hazır bir indirme olarak yayınlanmadı, bu yüzden şimdilik kaynaktan
 çalıştırıyorsun. Windows'ta [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 (sadece runtime değil, SDK) kurulu olmalı.
 
 ```bash
-git clone https://github.com/volkanturhan/Pixory.git
-cd Pixory
-dotnet run --project Pixory/Pixory.csproj
+git clone https://github.com/volkanturhan/pixory.git
+cd pixory
+dotnet run --project pixory/pixory.csproj
 ```
 
-Pixory sessizce sistem tepsisinde başlar — **hiçbir pencere açılmaz**. Bu
+pixory sessizce sistem tepsisinde başlar — **hiçbir pencere açılmaz**. Bu
 normaldir; kullanmak için kısayola bas ya da tepsi ikonuna tıkla (aşağıdaki
 **Nasıl kullanılır**'a bak).
 
 ## Nasıl kullanılır
 
-1. Pixory'i başlat — sessizce sistem tepsisine yerleşir.
+1. pixory'i başlat — sessizce sistem tepsisine yerleşir.
 2. Tam ekran seçiciyi açmak için **`Ctrl + Shift + C`**'ye bas (ya da tepsiden
    **Renk seç**'i seç).
 3. Fareyi gezdir — büyüteç imlecin altındaki pikselleri büyütür ve rengin hex
@@ -59,7 +59,7 @@ Tepsi ikonuna sağ tık: **Renk seç**, **Paleti aç**, **Kopyalama biçimi**
 
 ## Verilerin nerede tutulur
 
-Paletin yerel olarak `%APPDATA%\Pixory\palette.json` içinde saklanır ve makinenden
+Paletin yerel olarak `%APPDATA%\pixory\palette.json` içinde saklanır ve makinenden
 asla çıkmaz; tercihlerin yanındaki `settings.json` dosyasında tutulur. Temizlemek
 için tepsi menüsündeki **Paleti temizle**'yi kullan (sabitlenenler korunur);
 sabitlenenleri paletten tek tek kaldırabilirsin.
@@ -70,7 +70,7 @@ SDK olmadan birine verebileceğin bağımsız bir `.exe` mi istiyorsun? Kendin
 derle — çıktı repoya dahil edilmez:
 
 ```bash
-# dist/ içine derler (self-contained Pixory.exe + lite sürüm)
+# dist/ içine derler (self-contained pixory.exe + lite sürüm)
 pwsh tools/publish.ps1
 ```
 

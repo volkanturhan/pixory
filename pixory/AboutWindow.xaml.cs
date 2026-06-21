@@ -2,12 +2,12 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Navigation;
-using Pixory.Services;
+using pixory.Services;
 
 // Disambiguate from System.Windows.Localization (pulled in via System.Windows).
-using Localization = Pixory.Services.Localization;
+using Localization = pixory.Services.Localization;
 
-namespace Pixory;
+namespace pixory;
 
 /// <summary>
 /// A small "About" dialog: icon, name, version, author, project and website

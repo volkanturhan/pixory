@@ -2,7 +2,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 
-namespace Pixory.Services;
+namespace pixory.Services;
 
 /// <summary>
 /// Grabs a single snapshot of the whole desktop (all monitors). The picker

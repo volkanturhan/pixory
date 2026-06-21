@@ -1,7 +1,7 @@
 using System.Collections.ObjectModel;
-using Pixory.Models;
+using pixory.Models;
 
-namespace Pixory.Services;
+namespace pixory.Services;
 
 /// <summary>
 /// Keeps the most recently picked colours in memory — the palette. Ordering is

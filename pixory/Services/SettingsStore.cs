@@ -1,11 +1,11 @@
 using System.IO;
 using System.Text.Json;
 
-namespace Pixory.Services;
+namespace pixory.Services;
 
 /// <summary>
 /// Persists small user preferences — the chosen language and the colour format
-/// to copy in — as JSON under %APPDATA%\Pixory. Best-effort, like
+/// to copy in — as JSON under %APPDATA%\pixory. Best-effort, like
 /// <see cref="PaletteStorage"/>: failures fall back to defaults rather than
 /// throwing.
 /// </summary>
@@ -21,7 +21,7 @@ public sealed class SettingsStore
     {
         var folder = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            "Pixory");
+            "pixory");
         Directory.CreateDirectory(folder);
         _filePath = Path.Combine(folder, "settings.json");
     }

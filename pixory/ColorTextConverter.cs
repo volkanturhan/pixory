@@ -1,9 +1,9 @@
 using System.Globalization;
 using System.Windows.Data;
-using Pixory.Models;
-using Pixory.Services;
+using pixory.Models;
+using pixory.Services;
 
-namespace Pixory;
+namespace pixory;
 
 /// <summary>
 /// Turns a palette row (a <see cref="PickedColor"/>) into its caption in the
