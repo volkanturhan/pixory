@@ -22,17 +22,14 @@
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
         <local:ColorTextConverter x:Key="ColorText" />
 
-        <!-- Brand + neutral palette, shared across the popup. -->
-        <SolidColorBrush x:Key="Accent" Color="#6366F1" />
-        <SolidColorBrush x:Key="Surface" Color="#FFFFFF" />
-        <SolidColorBrush x:Key="Subtle" Color="#F3F4F6" />
-        <SolidColorBrush x:Key="Border" Color="#E5E7EB" />
-        <SolidColorBrush x:Key="TextPrimary" Color="#111827" />
-        <SolidColorBrush x:Key="TextMuted" Color="#6B7280" />
+        <!-- Theme brushes (Accent, Surface, Subtle, Border, TextPrimary,
+             TextMuted, AccentHover) come from the merged Light/Dark dictionary
+             and are referenced with DynamicResource so a live theme switch
+             repaints the popup. -->
 
         <!-- Palette rows: rounded, with hover and an accent-filled selection. -->
         <Style x:Key="ColorItemStyle" TargetType="ListBoxItem">
-            <Setter Property="Foreground" Value="{StaticResource TextPrimary}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextPrimary}" />
             <Setter Property="Padding" Value="8,6" />
             <Setter Property="Margin" Value="0,1" />
             <Setter Property="Template">
@@ -45,10 +42,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Bd" Property="Background" Value="{StaticResource Subtle}" />
+                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Subtle}" />
                             </Trigger>
                             <Trigger Property="IsSelected" Value="True">
-                                <Setter TargetName="Bd" Property="Background" Value="{StaticResource Accent}" />
+                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Accent}" />
                                 <Setter Property="Foreground" Value="White" />
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -60,7 +57,7 @@
         <!-- The headline "pick a colour" button. -->
         <Style x:Key="PickButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="White" />
-            <Setter Property="Background" Value="{StaticResource Accent}" />
+            <Setter Property="Background" Value="{DynamicResource Accent}" />
             <Setter Property="FontSize" Value="13" />
             <Setter Property="FontWeight" Value="SemiBold" />
             <Setter Property="Cursor" Value="Hand" />
@@ -75,7 +72,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Bd" Property="Background" Value="#4F46E5" />
+                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource AccentHover}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -86,8 +83,8 @@
 
     <!-- Outer margin leaves room for the drop shadow; the card is the Border. -->
     <Border Margin="12" CornerRadius="12"
-            Background="{StaticResource Surface}"
-            BorderBrush="{StaticResource Border}" BorderThickness="1">
+            Background="{DynamicResource Surface}"
+            BorderBrush="{DynamicResource Border}" BorderThickness="1">
         <Border.Effect>
             <DropShadowEffect Color="#000000" Opacity="0.22"
                               BlurRadius="20" ShadowDepth="0" />
@@ -105,14 +102,14 @@
             <Grid Grid.Row="0" Margin="2,0,2,10">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <Border Width="14" Height="14" CornerRadius="4"
-                            Background="{StaticResource Accent}" />
+                            Background="{DynamicResource Accent}" />
                     <TextBlock Text="pixory" Margin="8,0,0,0"
                                FontWeight="SemiBold" FontSize="13"
-                               Foreground="{StaticResource TextPrimary}"
+                               Foreground="{DynamicResource TextPrimary}"
                                VerticalAlignment="Center" />
                 </StackPanel>
                 <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center"
-                           FontSize="11" Foreground="{StaticResource TextMuted}"
+                           FontSize="11" Foreground="{DynamicResource TextMuted}"
                            Text="{Binding Items.Count, ElementName=PaletteList}" />
             </Grid>
 
@@ -180,7 +177,7 @@
                 <TextBlock Text="{Binding [PaletteEmpty], Source={x:Static services:Localization.Instance}}"
                            HorizontalAlignment="Center" VerticalAlignment="Center"
                            TextAlignment="Center" TextWrapping="Wrap" MaxWidth="220"
-                           FontSize="12" Foreground="{StaticResource TextMuted}">
+                           FontSize="12" Foreground="{DynamicResource TextMuted}">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Setter Property="Visibility" Value="Collapsed" />
@@ -196,7 +193,7 @@
 
             <!-- Keyboard hint. -->
             <TextBlock Grid.Row="3" Margin="2,10,2,0"
-                       FontSize="11" Foreground="{StaticResource TextMuted}"
+                       FontSize="11" Foreground="{DynamicResource TextMuted}"
                        TextWrapping="Wrap"
                        Text="{Binding [Hint], Source={x:Static services:Localization.Instance}}" />
         </Grid>
