@@ -24,13 +24,23 @@ yeniden açıp kopyalayabileceğin ya da sabitleyebileceğin küçük bir palett
 - **Favoriler** — sık kullandığın renkleri sabitle; hep üstte kalır, asla silinmez.
 - **Yeniden başlatmaya dayanır** — paletin (ve sabitlerin) kaydedilip geri yüklenir.
 - **Windows ile başla** — isteğe bağlı, tepsi menüsünden aç/kapa.
+- **Kendini günceller** — yeni sürüm çıkınca pixory tepsiden teklif eder; tek tıkla kurulur.
 - **İngilizce & Türkçe** — arayüz dilini tepsiden değiştir.
+- **Karanlık mod** — tepsiden Sistem / Koyu / Açık tema (varsayılan Windows'u takip eder).
 - **Tasarımı gereği gizli** — her şey senin makinende kalır, hiçbir şey yüklenmez.
 
-## Çalıştır
+## İndir
 
-pixory henüz hazır bir indirme olarak yayınlanmadı, bu yüzden şimdilik kaynaktan
-çalıştırıyorsun. Windows'ta [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+En güncel sürümü [**Releases**](https://github.com/volkanturhan/pixory/releases/latest) sayfasından indir:
+
+- **pixory-setup-…exe** — kurulum (önerilen). Yönetici izni gerekmez ve pixory bundan sonra kendini güncel tutar.
+- **pixory-…exe** — taşınabilir tek dosya; çalıştır yeter, kurulum yok.
+
+İkisi de self-contained, yani .NET kurulu olması gerekmez. Windows 10/11, 64-bit.
+
+## Kaynaktan çalıştır
+
+Kendin derlemeyi mi tercih edersin? Windows'ta [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 (sadece runtime değil, SDK) kurulu olmalı.
 
 ```bash
@@ -55,7 +65,8 @@ normaldir; kullanmak için kısayola bas ya da tepsi ikonuna tıkla (aşağıdak
    tekrar kopyala, **Ctrl + P** / sağ tık ile sabitle, **Del** ile sil.
 
 Tepsi ikonuna sağ tık: **Renk seç**, **Paleti aç**, **Kopyalama biçimi**
-(HEX / RGB / HSL), **Paleti temizle**, **Windows ile başlat**, dil ve **Çıkış**.
+(HEX / RGB / HSL), **Paleti temizle**, **Windows ile başlat**, dil, **Tema**
+(Sistem / Koyu / Açık), **Güncellemeleri denetle** ve **Çıkış**.
 
 ## Verilerin nerede tutulur
 
@@ -64,14 +75,14 @@ asla çıkmaz; tercihlerin yanındaki `settings.json` dosyasında tutulur. Temiz
 için tepsi menüsündeki **Paleti temizle**'yi kullan (sabitlenenler korunur);
 sabitlenenleri paletten tek tek kaldırabilirsin.
 
-## Paylaşılabilir exe oluştur
+## Kendin derle
 
-SDK olmadan birine verebileceğin bağımsız bir `.exe` mi istiyorsun? Kendin
-derle — çıktı repoya dahil edilmez:
+Yayın dosyalarını yerelde üretmek ister misin? Çıktı repoya dahil edilmez:
 
 ```bash
-# dist/ içine derler (self-contained pixory.exe + lite sürüm)
-pwsh tools/publish.ps1
+# Taşınabilir self-contained exe + Windows kurulumu, dist/release içine.
+# (Kurulum adımı Inno Setup ister: winget install JRSoftware.InnoSetup)
+pwsh tools/release.ps1
 ```
 
 ## Teknoloji

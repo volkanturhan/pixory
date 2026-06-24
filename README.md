@@ -24,13 +24,23 @@ you pick is kept in a small palette you can reopen, copy from again, or pin.
 - **Favourites** — pin the colours you reuse; they stay on top and are never dropped.
 - **Survives restarts** — your palette (and pins) are saved and restored.
 - **Start with Windows** — optional, toggled from the tray menu.
+- **Self-updating** — when a new version ships, pixory offers it from the tray; one click installs it.
 - **English & Turkish** — switch the interface language from the tray.
+- **Dark mode** — System / Dark / Light theme from the tray (follows Windows by default).
 - **Private by design** — everything stays on your machine; nothing is uploaded.
 
-## Run it
+## Download
 
-pixory isn't published as a prebuilt download yet, so for now you run it from
-source. You'll need the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+Grab the latest build from the [**Releases**](https://github.com/volkanturhan/pixory/releases/latest) page:
+
+- **pixory-setup-…exe** — installer (recommended). No admin rights needed, and pixory keeps itself up to date from here on.
+- **pixory-…exe** — portable single file; just run it, nothing to install.
+
+Both are self-contained, so you don't need .NET installed. Windows 10/11, 64-bit.
+
+## Run from source
+
+Prefer to build it yourself? You'll need the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 (the SDK, not just the runtime) on Windows.
 
 ```bash
@@ -56,7 +66,7 @@ press the hotkey or click the tray icon to use it (see **How to use** below).
 
 Right-click the tray icon for **Pick a colour**, **Open palette**, **Copy
 format** (HEX / RGB / HSL), **Clear palette**, **Start with Windows**, language,
-and **Quit**.
+**Theme** (System / Dark / Light), **Check for updates**, and **Quit**.
 
 ## Where your data lives
 
@@ -65,14 +75,14 @@ leaves your machine; preferences live next to it in `settings.json`. Use **Clear
 palette** in the tray menu to wipe it (pinned colours are kept); pinned items can
 be removed individually from the palette.
 
-## Build a shareable exe
+## Build it yourself
 
-Want a standalone `.exe` you can hand to someone without the SDK? Build it
-yourself — the output isn't checked into the repo:
+Want to produce the release artifacts locally? They aren't checked into the repo:
 
 ```bash
-# Builds into dist/ (self-contained pixory.exe + lite build)
-pwsh tools/publish.ps1
+# Portable self-contained exe + the Windows installer, into dist/release.
+# (The installer step needs Inno Setup: winget install JRSoftware.InnoSetup)
+pwsh tools/release.ps1
 ```
 
 ## Tech
