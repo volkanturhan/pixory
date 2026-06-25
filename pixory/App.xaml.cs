@@ -104,6 +104,10 @@ public partial class App : Application
         _updateTimer = new DispatcherTimer { Interval = TimeSpan.FromHours(6) };
         _updateTimer.Tick += (_, _) => _ = CheckForUpdateAsync(announceWhenCurrent: false);
         _updateTimer.Start();
+
+        // Lets the tray's "Open" be reproduced from the command line.
+        if (e.Args.Contains("--open"))
+            ShowPalette();
     }
 
     /// <summary>
