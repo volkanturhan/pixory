@@ -10,7 +10,8 @@ istediğin biçimde (HEX, RGB ya da HSL) panoya kopyalanır. Seçtiğin her renk
 yeniden açıp kopyalayabileceğin ya da sabitleyebileceğin küçük bir palette tutulur.
 
 <p align="center">
-  <img src="docs/screenshot.png" alt="pixory büyüteç ve hex okuması" width="360" />
+  <img src="docs/screenshot-dark.png" alt="pixory büyüteç ve hex okuması (dark)" width="360" />
+  <img src="docs/screenshot-light.png" alt="pixory büyüteç ve hex okuması (light)" width="360" />
 </p>
 
 ## Özellikler

@@ -10,7 +10,8 @@ to your clipboard in whatever format you like (HEX, RGB, or HSL). Every colour
 you pick is kept in a small palette you can reopen, copy from again, or pin.
 
 <p align="center">
-  <img src="docs/screenshot.png" alt="pixory's magnifier loupe and hex readout" width="360" />
+  <img src="docs/screenshot-dark.png" alt="pixory's magnifier loupe and hex readout (dark)" width="360" />
+  <img src="docs/screenshot-light.png" alt="pixory's magnifier loupe and hex readout (light)" width="360" />
 </p>
 
 ## Features
